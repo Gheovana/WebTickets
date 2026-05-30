@@ -1,0 +1,38 @@
+<div class="totem-container">
+  <mat-card class="totem-card">
+    <mat-card-header>
+      <mat-card-title>Retirar Senha</mat-card-title>
+      <mat-card-subtitle>Selecione o tipo de atendimento</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="btn-group">
+
+        <button mat-raised-button color="primary"
+                (click)="emitir('SP')" class="btn-tipo">
+          <mat-icon>priority_high</mat-icon>
+          Prioritário (SP)
+        </button>
+
+        <button mat-raised-button color="primary"
+                (click)="emitir('SG')" class="btn-tipo">
+          <mat-icon>people</mat-icon>
+          Geral (SG)
+        </button>
+
+        <button mat-raised-button color="accent"
+                (click)="emitir('SE')" class="btn-tipo">
+          <mat-icon>science</mat-icon>
+          Retirar Exame (SE)
+        </button>
+
+      </div>
+
+      <div *ngIf="senhaEmitida" class="senha-display">
+        <p>Sua senha:</p>
+        <h2>{{ senhaEmitida }}</h2>
+        <p class="aguarde">Aguarde ser chamado no painel</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

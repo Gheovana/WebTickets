@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// --- Paleta corporativa QueuePro Labs ---
+$primary-palette: mat.define-palette(
+  mat.$blue-palette, 800, 600, 900
+);
+$accent-palette: mat.define-palette(
+  mat.$cyan-palette, 600, 400, 900
+);
+$warn-palette: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary-palette,
+    accent:  $accent-palette,
+    warn:    $warn-palette,
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Roboto, sans-serif',
+  ),
+  density: 0,
+));
+
+@include mat.all-component-themes($theme);
+
+// --- Reset e estilos globais ---
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background: #f4f6f9;
+  color: #1a1a2e;
+}
+
+// Toolbar personalizada
+.mat-toolbar.app-toolbar {
+  background: #1a3a5c;
+  color: #ffffff;
+}
+
+// Cards com sombra suave
+.mat-mdc-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+
+// Botões primários
+.mat-mdc-raised-button.mat-primary {
+  background: #2563a8;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}

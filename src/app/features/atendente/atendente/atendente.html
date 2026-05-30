@@ -1,0 +1,54 @@
+<div class="atendente-container">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Chamar Próxima Senha</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-raised-button color="primary"
+              (click)="chamarProxima()"
+              [disabled]="senhaAtual !== null">
+        <mat-icon>campaign</mat-icon> Chamar Senha
+      </button>
+
+      <div *ngIf="senhaAtual" class="senha-chamada">
+        <mat-chip-set>
+          <mat-chip [color]="senhaAtual.tipo === 'SP' ? 'warn' : 'primary'"
+                    highlighted>
+            {{ senhaAtual.tipo }}
+          </mat-chip>
+        </mat-chip-set>
+        <h2>{{ senhaAtual.codigo }}</h2>
+        <p>Guichê {{ senhaAtual.guiche }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="senhaAtual">
+    <mat-card-header>
+      <mat-card-title>Finalizar Atendimento</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-raised-button color="accent"
+              (click)="finalizarAtendimento()">
+        <mat-icon>check_circle</mat-icon> Finalizar
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Contadores da fila -->
+  <div class="counters">
+    <mat-card class="counter-card">
+      <span>SP na fila</span>
+      <strong>{{ totais.sp }}</strong>
+    </mat-card>
+    <mat-card class="counter-card">
+      <span>SG na fila</span>
+      <strong>{{ totais.sg }}</strong>
+    </mat-card>
+    <mat-card class="counter-card">
+      <span>SE na fila</span>
+      <strong>{{ totais.se }}</strong>
+    </mat-card>
+  </div>
+</div>

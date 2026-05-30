@@ -1,0 +1,53 @@
+<div class="painel-container">
+  <mat-card class="painel-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>monitor</mat-icon> Painel de Chamados
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <!-- Senha em destaque (a mais recente) -->
+      <div *ngIf="ultimas.length > 0" class="destaque">
+        <p>Agora chamando:</p>
+        <h1>{{ ultimas[0].codigo }}</h1>
+        <p>Dirija-se ao Guichê {{ ultimas[0].guiche }}</p>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- Tabela das últimas 5 -->
+      <table mat-table [dataSource]="ultimas" class="historico-table">
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef>Senha</th>
+          <td mat-cell *matCellDef="let s">{{ s.codigo }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo">
+          <th mat-header-cell *matHeaderCellDef>Tipo</th>
+          <td mat-cell *matCellDef="let s">
+            <mat-chip [color]="s.tipo === 'SP' ? 'warn' : 'primary'"
+                      highlighted size="small">
+              {{ s.tipo }}
+            </mat-chip>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="guiche">
+          <th mat-header-cell *matHeaderCellDef>Guichê</th>
+          <td mat-cell *matCellDef="let s">{{ s.guiche }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="hora">
+          <th mat-header-cell *matHeaderCellDef>Hora</th>
+          <td mat-cell *matCellDef="let s">
+            {{ s.chamadaEm | date:'HH:mm:ss' }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>
