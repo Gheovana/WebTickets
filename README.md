@@ -43,19 +43,37 @@ Este projeto foi desenvolvido por 4 integrantes:
 - SCSS
 - HTML
 
-## Telas do projeto
+### Telas do projeto
 
 ### Totem
+
+Tela destinada à emissão de senhas pelo cliente.
 
 ![Tela Totem](public/screenshots/totem.png)
 
 ### Atendimento
 
+Tela utilizada pela atendente para selecionar o guichê, chamar a próxima senha e finalizar o atendimento.
+
 ![Tela Atendimento](public/screenshots/atendimento.png)
 
 ### Painel
 
+Tela de acompanhamento para exibição da senha chamada e das últimas chamadas realizadas.
+
 ![Tela Painel](public/screenshots/painel.png)
+
+### Relatórios
+
+Tela com indicadores operacionais e detalhamento das senhas emitidas e atendidas.
+
+![Tela Relatórios](public/screenshots/relatorios.png)
+
+### Sobre
+
+Tela institucional com informações sobre a solução WebTickets Enterprise.
+
+![Tela Sobre](public/screenshots/sobre.png)
 
 ## Como executar o projeto
 
