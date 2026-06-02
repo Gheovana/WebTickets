@@ -1,0 +1,60 @@
+<section class="screen">
+  <div class="header">
+    <span>Operação de guichê</span>
+    <h1>Atendimento</h1>
+    <p>Controle a chamada das senhas e registre o atendimento do cliente.</p>
+  </div>
+
+  <div class="layout">
+    <mat-card class="control-card">
+      <div class="card-title">
+        <mat-icon>support_agent</mat-icon>
+        <div>
+          <h2>Central de chamada</h2>
+          <p>Selecione o guichê e chame a próxima senha da fila.</p>
+        </div>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Guichê</mat-label>
+        <mat-select [(value)]="guiche">
+          <mat-option [value]="1">Guichê 1</mat-option>
+          <mat-option [value]="2">Guichê 2</mat-option>
+          <mat-option [value]="3">Guichê 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="chamarSenha()">
+          <mat-icon>campaign</mat-icon>
+          Chamar próxima
+        </button>
+
+        <button mat-stroked-button color="warn" (click)="finalizarAtendimento()">
+          <mat-icon>done_all</mat-icon>
+          Finalizar
+        </button>
+      </div>
+    </mat-card>
+
+    <mat-card class="status-card">
+      <span>Status atual</span>
+
+      <h2>{{ senhaAtual?.numero || 'Aguardando chamada' }}</h2>
+
+      <p>{{ mensagem }}</p>
+
+      <div class="details" *ngIf="senhaAtual">
+        <div>
+          <small>Tipo</small>
+          <strong>{{ senhaAtual.tipo }}</strong>
+        </div>
+
+        <div>
+          <small>Guichê</small>
+          <strong>{{ senhaAtual.guiche }}</strong>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</section>

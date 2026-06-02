@@ -1,0 +1,78 @@
+.topbar {
+  height: 76px;
+  background: #0b2f3a;
+  color: white;
+  justify-content: space-between;
+  padding: 0 36px;
+  box-shadow: 0 8px 24px rgba(11, 47, 58, 0.22);
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #d8b76a;
+  color: #0b2f3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-area strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.brand-area span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.78;
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+}
+
+nav a {
+  color: white;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.page {
+  min-height: calc(100vh - 76px);
+  background:
+    linear-gradient(180deg, #eaf0f3 0%, #f7f9fb 280px),
+    #f7f9fb;
+  padding: 40px;
+}
+
+@media (max-width: 800px) {
+  .topbar {
+    height: auto;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .page {
+    padding: 20px;
+  }
+}

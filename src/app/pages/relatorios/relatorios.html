@@ -1,0 +1,90 @@
+<section class="screen">
+  <div class="header">
+    <span>Indicadores operacionais</span>
+    <h1>Relatórios</h1>
+    <p>Acompanhe o volume de senhas emitidas, atendidas e separadas por tipo.</p>
+  </div>
+
+  <div class="cards">
+    <mat-card class="metric-card main">
+      <span>Senhas emitidas</span>
+      <strong>{{ totalEmitidas }}</strong>
+      <p>Total geral registrado no sistema.</p>
+    </mat-card>
+
+    <mat-card class="metric-card success">
+      <span>Senhas atendidas</span>
+      <strong>{{ totalAtendidas }}</strong>
+      <p>Atendimentos concluídos nos guichês.</p>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <span>Prioritárias</span>
+      <strong>{{ contarPorTipo('SP') }}</strong>
+      <p>Senhas de prioridade SP.</p>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <span>Gerais</span>
+      <strong>{{ contarPorTipo('SG') }}</strong>
+      <p>Senhas gerais SG.</p>
+    </mat-card>
+
+    <mat-card class="metric-card">
+      <span>Exames</span>
+      <strong>{{ contarPorTipo('SE') }}</strong>
+      <p>Retirada de exames SE.</p>
+    </mat-card>
+  </div>
+
+  <mat-card class="table-card">
+    <div class="table-header">
+      <div>
+        <span>Base detalhada</span>
+        <h2>Detalhamento das senhas</h2>
+      </div>
+
+      <mat-icon>analytics</mat-icon>
+    </div>
+
+    <table mat-table [dataSource]="tickets">
+      <ng-container matColumnDef="numero">
+        <th mat-header-cell *matHeaderCellDef>Número</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.numero }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef>Tipo</th>
+        <td mat-cell *matCellDef="let ticket">{{ ticket.tipo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="emitidaEm">
+        <th mat-header-cell *matHeaderCellDef>Emissão</th>
+        <td mat-cell *matCellDef="let ticket">
+          {{ ticket.emitidaEm | date: 'dd/MM/yyyy HH:mm' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="atendidaEm">
+        <th mat-header-cell *matHeaderCellDef>Atendimento</th>
+        <td mat-cell *matCellDef="let ticket">
+          {{ ticket.atendidaEm ? (ticket.atendidaEm | date: 'dd/MM/yyyy HH:mm') : '-' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="guiche">
+        <th mat-header-cell *matHeaderCellDef>Guichê</th>
+        <td mat-cell *matCellDef="let ticket">
+          {{ ticket.guiche || '-' }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <p class="empty" *ngIf="tickets.length === 0">
+      Nenhuma senha emitida até o momento.
+    </p>
+  </mat-card>
+</section>

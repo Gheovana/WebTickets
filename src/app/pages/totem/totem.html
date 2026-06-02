@@ -1,0 +1,41 @@
+<section class="screen">
+  <div class="header">
+    <span>Autoatendimento</span>
+    <h1>Aureon Queue</h1>
+    <p>Selecione o tipo de atendimento para emitir sua senha.</p>
+  </div>
+
+  <div class="ticket-grid">
+    <mat-card class="ticket-card priority">
+      <mat-icon>verified_user</mat-icon>
+      <h2>Senha Prioritária</h2>
+      <p>Atendimento preferencial conforme regra de prioridade.</p>
+      <button mat-raised-button color="primary" (click)="emitir('SP')">
+        Emitir SP
+      </button>
+    </mat-card>
+
+    <mat-card class="ticket-card">
+      <mat-icon>person</mat-icon>
+      <h2>Senha Geral</h2>
+      <p>Atendimento comum para serviços de rotina.</p>
+      <button mat-raised-button color="primary" (click)="emitir('SG')">
+        Emitir SG
+      </button>
+    </mat-card>
+
+    <mat-card class="ticket-card exam">
+      <mat-icon>description</mat-icon>
+      <h2>Retirada de Exames</h2>
+      <p>Fluxo rápido para retirada de documentos e exames.</p>
+      <button mat-raised-button color="primary" (click)="emitir('SE')">
+        Emitir SE
+      </button>
+    </mat-card>
+  </div>
+
+  <mat-card class="result" *ngIf="senhaGerada">
+    <span>Senha emitida</span>
+    <strong>{{ senhaGerada }}</strong>
+  </mat-card>
+</section>

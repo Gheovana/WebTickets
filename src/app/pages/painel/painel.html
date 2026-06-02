@@ -1,0 +1,41 @@
+<section class="panel">
+  <div class="hero">
+    <div>
+      <span>Painel de chamadas</span>
+      <h1>{{ senhaAtual?.numero || 'Aguardando' }}</h1>
+      <p *ngIf="senhaAtual">Dirija-se ao guichê {{ senhaAtual.guiche }}</p>
+      <p *ngIf="!senhaAtual">Nenhuma senha chamada no momento.</p>
+    </div>
+
+    <div class="hero-badge" *ngIf="senhaAtual">
+      <small>Tipo</small>
+      <strong>{{ senhaAtual.tipo }}</strong>
+    </div>
+  </div>
+
+  <mat-card class="history-card">
+    <div class="history-title">
+      <div>
+        <span>Histórico</span>
+        <h2>Últimas chamadas</h2>
+      </div>
+
+      <mat-icon>monitor</mat-icon>
+    </div>
+
+    <div class="history" *ngIf="chamadas.length > 0; else vazio">
+      <div class="history-item" *ngFor="let chamada of chamadas">
+        <div>
+          <strong>{{ chamada.numero }}</strong>
+          <span>{{ chamada.tipo }}</span>
+        </div>
+
+        <p>Guichê {{ chamada.guiche }}</p>
+      </div>
+    </div>
+
+    <ng-template #vazio>
+      <p class="empty">Nenhuma senha chamada ainda.</p>
+    </ng-template>
+  </mat-card>
+</section>

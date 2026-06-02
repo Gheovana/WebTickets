@@ -1,0 +1,142 @@
+.panel {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hero {
+  background:
+    linear-gradient(135deg, rgba(11, 47, 58, 0.98), rgba(15, 61, 74, 0.94)),
+    #0b2f3a;
+  color: white;
+  border-radius: 8px;
+  padding: 46px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 14px 36px rgba(11, 47, 58, 0.2);
+}
+
+.hero span {
+  color: #d8b76a;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 72px;
+  margin: 18px 0 12px;
+}
+
+.hero p {
+  font-size: 24px;
+  opacity: 0.86;
+  margin: 0;
+}
+
+.hero-badge {
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(216, 183, 106, 0.5);
+  border-radius: 8px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-badge small {
+  color: #d8b76a;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hero-badge strong {
+  font-size: 42px;
+}
+
+.history-card {
+  margin-top: 24px;
+  padding: 28px;
+}
+
+.history-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.history-title span {
+  color: #9b7a2f;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.history-title h2 {
+  color: #0b2f3a;
+  margin: 6px 0 0;
+}
+
+.history-title mat-icon {
+  color: #0b2f3a;
+  background: #eef4f6;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.history {
+  display: grid;
+  gap: 12px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f8fa;
+  border: 1px solid rgba(15, 61, 74, 0.08);
+  padding: 16px 18px;
+  border-radius: 8px;
+}
+
+.history-item strong {
+  color: #0b2f3a;
+  font-size: 20px;
+}
+
+.history-item span {
+  color: #60737a;
+  margin-left: 10px;
+}
+
+.history-item p {
+  color: #0b2f3a;
+  font-weight: 700;
+  margin: 0;
+}
+
+.empty {
+  color: #60737a;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-badge {
+    width: 110px;
+    height: 110px;
+  }
+}
