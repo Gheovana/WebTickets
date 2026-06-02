@@ -10,16 +10,16 @@
       <mat-icon>verified_user</mat-icon>
       <h2>Senha Prioritária</h2>
       <p>Atendimento preferencial conforme regra de prioridade.</p>
-      <button mat-raised-button color="primary" (click)="emitir('SP')">
+      <button class="primary-action" mat-flat-button (click)="emitir('SP')">
         Emitir SP
       </button>
     </mat-card>
 
-    <mat-card class="ticket-card">
+    <mat-card class="ticket-card general">
       <mat-icon>person</mat-icon>
       <h2>Senha Geral</h2>
       <p>Atendimento comum para serviços de rotina.</p>
-      <button mat-raised-button color="primary" (click)="emitir('SG')">
+      <button class="primary-action" mat-flat-button (click)="emitir('SG')">
         Emitir SG
       </button>
     </mat-card>
@@ -28,7 +28,7 @@
       <mat-icon>description</mat-icon>
       <h2>Retirada de Exames</h2>
       <p>Fluxo rápido para retirada de documentos e exames.</p>
-      <button mat-raised-button color="primary" (click)="emitir('SE')">
+      <button class="primary-action" mat-flat-button (click)="emitir('SE')">
         Emitir SE
       </button>
     </mat-card>

@@ -30,3 +30,40 @@ mat-card {
   box-shadow: 0 12px 32px rgba(15, 61, 74, 0.1) !important;
   border: 1px solid rgba(15, 61, 74, 0.08);
 }
+
+.guiche-panel {
+  background: white !important;
+  border-radius: 6px !important;
+  box-shadow: 0 12px 28px rgba(11, 47, 58, 0.18) !important;
+}
+
+.mat-mdc-option {
+  min-height: 46px !important;
+}
+
+.cdk-overlay-pane {
+  z-index: 1000 !important;
+}
+
+.mat-mdc-select-panel,
+.mat-mdc-select-panel.guiche-panel {
+  background: #ffffff !important;
+  opacity: 1 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 16px 34px rgba(11, 47, 58, 0.22) !important;
+  overflow: hidden !important;
+}
+
+.mat-mdc-select-panel .mat-mdc-option {
+  background: #ffffff !important;
+  color: #0b2f3a !important;
+  min-height: 48px !important;
+}
+
+.mat-mdc-select-panel .mat-mdc-option:hover {
+  background: #eef4f6 !important;
+}
+
+.mat-mdc-select-panel .mat-mdc-option.mdc-list-item--selected {
+  background: #e4edf1 !important;
+}

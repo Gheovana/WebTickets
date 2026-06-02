@@ -15,9 +15,9 @@
         </div>
       </div>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field class="guiche-field" appearance="outline" subscriptSizing="dynamic">
         <mat-label>Guichê</mat-label>
-        <mat-select [(value)]="guiche">
+        <mat-select [(value)]="guiche" panelClass="guiche-panel">
           <mat-option [value]="1">Guichê 1</mat-option>
           <mat-option [value]="2">Guichê 2</mat-option>
           <mat-option [value]="3">Guichê 3</mat-option>

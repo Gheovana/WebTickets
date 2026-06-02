@@ -63,6 +63,10 @@
   border-top: 4px solid #d8b76a;
 }
 
+.general {
+  border-top: 4px solid #0b2f3a;
+}
+
 .exam {
   border-top: 4px solid #2f80ed;
 }
@@ -87,4 +91,20 @@
   .ticket-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.primary-action {
+  width: 100%;
+  height: 46px;
+  border-radius: 6px;
+  background: #0b2f3a !important;
+  color: white !important;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 18px;
+  box-shadow: 0 8px 18px rgba(11, 47, 58, 0.18);
+}
+
+.primary-action:hover {
+  background: #164958 !important;
 }

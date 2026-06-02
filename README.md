@@ -1,59 +1,65 @@
 # WebTickets
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+Sistema frontend para controle de atendimento em filas, desenvolvido em Angular com Angular Material.
 
-## Development server
+## Empresa fictícia
 
-To start a local development server, run:
+Aureon Health Group
+
+## Sobre o projeto
+
+O WebTickets Enterprise é uma solução frontend para emissão, chamada e acompanhamento de senhas em ambientes de atendimento, como laboratórios médicos.
+
+O projeto foi desenvolvido com foco em uma interface limpa, profissional e empresarial, seguindo os requisitos de controle de senhas apresentados no documento da atividade.
+
+## Funcionalidades
+
+- Emissão de senhas prioritárias, gerais e para retirada de exames
+- Chamada da próxima senha por guichê
+- Painel com senha atual e últimas chamadas
+- Relatórios com senhas emitidas e atendidas
+- Interface responsiva e profissional
+
+## Equipe
+
+Este projeto foi desenvolvido por 4 integrantes:
+
+- Gheovana Pietra Araújo dos Santos (01799514)
+- Nathalia de Araújo Silva (01379923)
+- Sérgio José Galdino Da Silva Júnior (01800630)
+- Maria Vitória Albuquerque Cunha (01797764)
+
+## Tipos de senha
+
+- SP - Senha Prioritária
+- SG - Senha Geral
+- SE - Retirada de Exames
+
+## Tecnologias utilizadas
+
+- Angular
+- Angular Material
+- TypeScript
+- SCSS
+- HTML
+
+## Telas do projeto
+
+### Totem
+
+![Tela Totem](public/screenshots/totem.png)
+
+### Atendimento
+
+![Tela Atendimento](public/screenshots/atendimento.png)
+
+### Painel
+
+![Tela Painel](public/screenshots/painel.png)
+
+## Como executar o projeto
+
+Clone o repositório:
 
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+git clone https://github.com/seuusuario/WebTickets.git

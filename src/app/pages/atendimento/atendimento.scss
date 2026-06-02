@@ -31,7 +31,11 @@
   gap: 24px;
 }
 
-.control-card,
+.control-card {
+  padding: 30px;
+  overflow: visible;
+}
+
 .status-card {
   padding: 30px;
 }
@@ -69,12 +73,13 @@ mat-form-field {
 .actions {
   display: flex;
   gap: 14px;
-  margin-top: 12px;
+  margin-top: 0;
   flex-wrap: wrap;
 }
 
 .actions button {
-  min-height: 44px;
+  min-height: 46px;
+  padding: 0 22px;
 }
 
 .status-card {
@@ -120,6 +125,15 @@ mat-form-field {
 
 .details strong {
   font-size: 22px;
+}
+
+.guiche-field {
+  width: 300px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 48px;
+  background: white;
+  border-radius: 8px;
 }
 
 @media (max-width: 900px) {
